@@ -43,6 +43,11 @@ public class LibraryTest {
     }
 
     @Test
+    public void hasBooks() {
+        assertEquals(true, library.getBooks().contains(janeEyre));
+    }
+
+    @Test
     public void canAddBookIfEnoughCapacity(){
         assertEquals(1, library.bookCount());
         library.addBook(lordOfTheRings);
@@ -53,7 +58,15 @@ public class LibraryTest {
         assertEquals(4, library.bookCount());
     }
 
+    @Test
+    public void canGetGenresCount(){
+        library.addBook(lordOfTheRings);
+        library.addBook(harryPotter);
+        library.addBook(theLittlePrince);
 
+        System.out.println(library.getGenresCount());
+
+    }
 
 
 
